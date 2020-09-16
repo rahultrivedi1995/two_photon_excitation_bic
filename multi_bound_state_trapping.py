@@ -33,7 +33,6 @@ def compute_cw_prob_matrix(
     # Calculate the inverse of the Gamma field.
     Gamma_decay_part = np.zeros((num_freqs, sys.num_qubits, sys.num_qubits),
                                 dtype=complex)
-    print(xis_mat.shape)
     Gamma_decay_part[(num_pos_freqs + 1):, :, :] = (
         xi_sq_t**2 + 2 * eps_sq[np.newaxis, :, :] * xi_sq_t)
     phase_comp = np.exp(-2.0j * np.pi *

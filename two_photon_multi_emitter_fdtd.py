@@ -153,6 +153,13 @@ class TwoPhFdtdGrid:
         For a state `psi(tau, t; n)`, the tau-transpose slice is given by
         `psi(t, tau; n) * Theta(tau_1 < tau < tau_2)`.
 
+        Args:
+            index: The state which to slice.
+            time: The time instance at which to calculate slice.
+            tau_extent: The extent of the time-bins with which to slice.
+
+        Returns:
+            The slice as a numpy array.
         """
         # Calculate the time index.
         time_ind = self.tau_to_ind(time)
